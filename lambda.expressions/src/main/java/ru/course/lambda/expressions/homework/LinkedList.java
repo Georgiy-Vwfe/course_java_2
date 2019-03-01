@@ -17,7 +17,7 @@ public class LinkedList<T> {
 
     public void add(T value) {
         Item item = new Item(value);
-        if(head == null) {
+        if (head == null) {
             head = item;
             last = item;
         } else {
@@ -30,7 +30,21 @@ public class LinkedList<T> {
             При реализации нужно воспользоваться вложенным или анонимным классом
      */
     public Iterator<T> iterator() {
-        return null;
+        return new Iterator<T>() {
+            private Item current = head;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                T item = current.value;
+                head = current.next;
+                return item;
+            }
+        };
     }
 
     /*TODO Метод должен развернуть список в обратном порядке
