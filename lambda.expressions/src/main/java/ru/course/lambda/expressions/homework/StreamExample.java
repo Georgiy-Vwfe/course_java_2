@@ -47,17 +47,7 @@ public class StreamExample {
 
         //output line-by-line sorting
         int[][] array = Stream.of(ints)
-                .peek(new Consumer<int[]>() {
-                    @Override
-                    public void accept(int[] ints) {
-                        Arrays.sort(ints);
-                    }
-                }).toArray(new IntFunction<int[][]>() {
-                    @Override
-                    public int[][] apply(int value) {
-                        return new int[3][3];
-                    }
-                });
+                .peek(Arrays::sort).toArray(value -> new int[3][3]);
 
         System.out.println(Arrays.deepToString(array));
     }
