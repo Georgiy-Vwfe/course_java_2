@@ -1,7 +1,12 @@
 package ru.course.lambda.expressions.homework;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.IntFunction;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamExample {
@@ -28,13 +33,32 @@ public class StreamExample {
         int[][] ints = {
                 {2, 5, 1}, {6, 7, 3}, {9, 8, 4}
         };
-        Stream.of(ints).flatMap(new Function<int[], Stream<?>>() {
-            @Override
-            public Stream<?> apply(int[] ints) {
 
-                return null;
-            }
-        });
+        //output sorted array
+        Stream.of(ints)
+                .flatMap((Function<int[], Stream<?>>) ints1 -> {
+                    List<Integer> sortedValues = Arrays.stream(ints1).boxed().sorted().collect(Collectors.toList());
+                    return sortedValues.stream();
+                })
+                .sorted()
+                .forEach(System.out::print);
+
+        System.out.println();
+
+        //output line-by-line sorting
+        int[][] array = Stream.of(ints)
+                .peek(new Consumer<int[]>() {
+                    @Override
+                    public void accept(int[] ints) {
+                        Arrays.sort(ints);
+                    }
+                }).toArray(new IntFunction<int[][]>() {
+                    @Override
+                    public int[][] apply(int value) {
+                        return new int[3][3];
+                    }
+                });
+
+        System.out.println(Arrays.deepToString(array));
     }
-
 }
