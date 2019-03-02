@@ -1,6 +1,7 @@
 package ru.course.lambda.expressions.homework;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class LinkedList<T> {
     private Item head;
@@ -40,9 +41,12 @@ public class LinkedList<T> {
 
             @Override
             public T next() {
-                T item = current.value;
-                head = current.next;
-                return item;
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                Item item = new Item(current.value);
+                head.next.value = current.next.value;
+                return item.value;
             }
         };
     }
