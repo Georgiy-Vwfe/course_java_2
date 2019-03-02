@@ -12,6 +12,7 @@ public class StreamExample {
                 "123"
         };
 
+        //comparator
         Optional<String> longerString = Stream.of(strings).max((o1, o2) -> {
             if (o1.length() > o2.length()) {
                 return 1;
@@ -21,6 +22,7 @@ public class StreamExample {
                 return 0;
             }
         });
+        //output max length
         System.out.println(longerString.get());
 
         int[][] ints = {
@@ -34,4 +36,5 @@ public class StreamExample {
             }
         });
     }
+
 }
