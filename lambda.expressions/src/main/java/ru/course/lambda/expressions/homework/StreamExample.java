@@ -30,7 +30,7 @@ public class StreamExample {
         //output sorted array
         Stream.of(ints)
                 .flatMap((Function<int[], Stream<?>>) ints1 -> {
-                    List<Integer> sortedValues = Arrays.stream(ints1).boxed().sorted().collect(Collectors.toList());
+                    List<Integer> sortedValues = Arrays.stream(ints1).boxed().collect(Collectors.toList());
                     return sortedValues.stream();
                 })
                 .sorted()
