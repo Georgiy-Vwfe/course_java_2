@@ -1,4 +1,4 @@
-package ru.course.lambda.expressions.homework.MA;
+package ru.course.lambda.expressions.homework.MA.util;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -10,7 +10,7 @@ import java.io.InputStream;
 
 public class HttpGet {
     private String link;
-    static InputStream content;
+    private static InputStream content;
 
     public HttpGet(String link) {
         this.link = link;
