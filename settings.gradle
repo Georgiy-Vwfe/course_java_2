@@ -10,4 +10,5 @@
 rootProject.name = 'course_java_2'
 include 'lambda.expressions'
 include 'annotations'
+include 'spring.ioc'
 
