@@ -13,6 +13,6 @@ public class ApplicationConfiguration {
 
     @Bean
     public Source source() {
-        return new FileSource();
+        return new InternetSource();
     }
 }
