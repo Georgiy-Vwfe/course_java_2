@@ -1,0 +1,19 @@
+import sun.management.snmp.jvminstr.JvmClassLoadingImpl
+
+plugins {
+    id 'java'
+}
+
+group 'ru.ithub'
+version 'unspecified'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    
+}

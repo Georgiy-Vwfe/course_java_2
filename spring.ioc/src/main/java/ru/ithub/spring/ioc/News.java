@@ -9,6 +9,8 @@ public class News {
         return content;
     }
 
+    //classLoadingMXBean
+    //managmentFactory
     public void setContent(String content) {
         this.content = content;
     }
