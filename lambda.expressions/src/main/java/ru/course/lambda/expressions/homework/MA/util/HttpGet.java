@@ -16,8 +16,8 @@ public class HttpGet {
         this.link = link;
     }
 
-    public static InputStream getHttp(CloseableHttpClient httpclient, CloseableHttpResponse response) {
-        httpclient = HttpClients.createDefault();
+    public static InputStream getHttp(CloseableHttpResponse response) {
+        CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://targethost/homepage");
         try {
             response = httpclient.execute((HttpUriRequest) httpGet);
