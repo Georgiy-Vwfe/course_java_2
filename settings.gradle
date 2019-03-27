@@ -12,4 +12,5 @@ include 'lambda.expressions'
 include 'annotations'
 include 'spring.ioc'
 include 'spring.ioc'
+include 'spring.xml'
 
