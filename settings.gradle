@@ -13,4 +13,5 @@ include 'annotations'
 include 'spring.ioc'
 include 'spring.ioc'
 include 'spring.xml'
+include 'sort'
 
