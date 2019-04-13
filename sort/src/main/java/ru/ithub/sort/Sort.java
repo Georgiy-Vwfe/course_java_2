@@ -54,7 +54,7 @@ public class Sort {
             return;
         }
             int i = start, j = end;
-        int center = i - (i - j) / 2;
+        int center = start - (start - end) / 2;
         while (i < j) {
             while (i < center && (array[i] <= array[center])) {
                 i++;
